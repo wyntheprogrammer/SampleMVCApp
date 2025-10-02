@@ -4,6 +4,22 @@
     ViewData["Title"] = "All Students";
 }
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
 <div class="d-flex justify-content-between my-2">
     <h2>All Students</h2>
     <button type="button" class="btn btn-primary px-3 py-0" 
@@ -11,7 +27,6 @@
         <i class="bi bi-plus"></i>New
     </button>
 </div>
-
 
 
 <table class="table table-bordered table-striped">

@@ -51,8 +51,12 @@ public class HomeController : Controller
         {
             _context.Students.Add(student);
             await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Student created successfully!";
             return RedirectToAction("All");
         }
+
+        TempData["ErrorMessage"] = "Failed to create student. Please check the form for errors.";
         return View(student);
     }
 
